@@ -1,10 +1,17 @@
+body {
+  background-image: url(background.png);
+  background-size: cover;
+  animation: bgMoving 7s linear infinite;
+  background-size: auto 100vh;
+}
+
 .character{
-  width: 100px;
-  height: 50px;
+  width: 200px;
+  height: 200px;
   position:absolute;
   bottom: 20%;
   left: 10%;
-  background-image: url('Peppa_pig.png');
+  background-image: url('super_mario.ico');
   background-size: cover;
 }
 
@@ -21,4 +28,13 @@
       bottom: 20%;
       transform: rotate(-360deg);
     }
+}
+
+@keyframes bgMoving{
+  0%{
+    background-position: 100vw;
+  }
+  100%{
+    background-position: -100vw;
+}
 }
