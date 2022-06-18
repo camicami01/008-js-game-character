@@ -10,7 +10,8 @@
 <body>
 
   <div class="character"></div>
-  
+  <div class="enemy"></div>
+
 
   <script>
     const character = document.querySelector('.character')
@@ -21,7 +22,13 @@
         character.classList.add('jump')
         setTimeout( () => {
           character.classList.remove('jump')
-        }, 2000 )
+        }, 1000 )
+      }
+      if (event.code == "ArrowRight"){
+        character.classList.add('go-right')
+        setTimeout( () => {
+          character.classList.remove('go-right')
+        }, 1000 )
       }
     }
   </script>

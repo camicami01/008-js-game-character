@@ -1,17 +1,19 @@
 body {
   background-image: url(background.png);
-  background-size: cover;
   animation: bgMoving 7s linear infinite;
-  background-size: auto 100vh;
+  background-size: 150vh;
+  background-position: left, right;
+  background-size: contain;
+  background-attachment: fixed;
 }
 
 .character{
   width: 200px;
-  height: 200px;
+  height: 230px;
   position:absolute;
-  bottom: 20%;
+  bottom: 10%;
   left: 10%;
-  background-image: url('super_mario.ico');
+  background-image: url('super_mario.png');
   background-size: cover;
 }
 
@@ -19,13 +21,25 @@ body {
   animation: jump 1000ms forwards;
 }
 
+.go-right{
+  animation: goRight 1000ms forwards;
+}
+
+@keyframes  goRight {
+  50%{
+    left: 60%;
+  }
+  100%{
+    /* bottom: 20%; */
+    transform: rotate(-360deg);
+  }
+}
 
 @keyframes  jump {
     50%{
       bottom: 60%;
     }
     100%{
-      bottom: 20%;
       transform: rotate(-360deg);
     }
 }
@@ -37,4 +51,37 @@ body {
   100%{
     background-position: -100vw;
 }
+}
+
+.enemy{
+  width: auto;
+  height: auto;
+  position: absolute;
+  bottom: 13%;
+  left: 100%;
+  background-image: url('goomba_enemy.webp');
+  animation: enemyAnim 4s linear infinite;
+  background-size: cover;
+}
+
+@keyframes enemyAnim {
+  25%{
+    width: 5vw;
+    height: 6vw;
+    transform:rotate(0deg);
+    opacity: .5;
+  }
+  50%{
+    width: 7vw;
+    height: 9vw;
+    opacity: 100%;
+  }
+  75%{
+    width: 8vw;
+    transform:rotate(30deg);
+    height: 10vw;
+  }
+  100%{
+    left: -20%;
+  }
 }
